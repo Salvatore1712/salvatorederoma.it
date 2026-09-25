@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 // Card progetto: tutta la card è cliccabile.
 // `to` per le route interne, `href` per link esterni; senza nessuno dei due la card non è un link.
 // Senza `image` mostra un placeholder.
-function ProjectCard({ title, text, category, stack = [], image, to, href }) {
+function ProjectCard({ title, text, category, stack = [], image, to, href, ...props }) {
   const content = (
     <>
       <div className="project-card__media">
@@ -38,18 +38,18 @@ function ProjectCard({ title, text, category, stack = [], image, to, href }) {
   )
 
   if (to) {
-    return <Link className="project-card" to={to}>{content}</Link>
+    return <Link className="project-card" to={to} {...props}>{content}</Link>
   }
 
   if (href) {
     return (
-      <a className="project-card" href={href} target="_blank" rel="noreferrer">
+      <a className="project-card" href={href} target="_blank" rel="noreferrer" {...props}>
         {content}
       </a>
     )
   }
 
-  return <article className="project-card">{content}</article>
+  return <article className="project-card" {...props}>{content}</article>
 }
 
 export default ProjectCard

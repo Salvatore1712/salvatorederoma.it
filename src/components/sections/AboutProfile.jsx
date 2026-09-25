@@ -5,14 +5,14 @@ import { philosophyTags, education } from '../../data/about.js'
 function AboutProfile({ image }) {
   return (
     <section className="about-profile">
-      <h2 className="about-profile__heading">The philosophy & pedigree</h2>
-      <ul className="about-profile__tags" role="list">
+      <h2 className="about-profile__heading" data-reveal>The philosophy & pedigree</h2>
+      <ul className="about-profile__tags" role="list" data-reveal style={{ '--i': 1 }}>
         {philosophyTags.map((tag) => (
           <li key={tag} className="about-tag">{tag}</li>
         ))}
       </ul>
 
-      <article className="about-profile__card">
+      <article className="about-profile__card" data-reveal>
         <div className="about-profile__media">
           {image ? (
             <img className="about-profile__image" src={image} alt="Salvatore De Roma" />

@@ -6,9 +6,15 @@ import Footer from './components/layout/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Project from './pages/Project.jsx'
 import About from './pages/About.jsx'
+import { useMediaQuery } from './hooks/useMediaQuery.js'
+import { useReveal } from './hooks/useReveal.js'
 
 function App() {
   const { pathname } = useLocation()
+  const isMobile = useMediaQuery('(max-width: 1024px)')
+
+  // Su mobile i contenuti compaiono allo scroll
+  useReveal(isMobile, pathname)
 
   // Ogni nuova pagina parte dall'alto
   useEffect(() => {

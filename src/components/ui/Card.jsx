@@ -1,6 +1,6 @@
-function Card({ title, text, number, children }) {
+function Card({ title, text, number, children, ...props }) {
   return (
-    <article className="card">
+    <article className="card" {...props}>
       
       <div className="card__body">
         <p className="card__number">{number}</p>

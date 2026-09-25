@@ -2,7 +2,7 @@ import Button from '../ui/Button.jsx'
 
 function AboutCta() {
   return (
-    <section className="about-cta">
+    <section className="about-cta" data-reveal>
       <div className="about-cta__top">
         <span className="about-cta__status">Booking Q2 / Q3 2025</span>
         <span className="about-cta__slots">Limited slots</span>

@@ -3,8 +3,9 @@ import { useEffect } from 'react'
 // Lente "a raggi X": un cerchio segue il puntatore e mostra lo strato di codice sotto la hero.
 // Aggiorna le variabili CSS --x, --y, --r, --s, --px, --py sull'elemento hero.
 // Gli elementi con [data-inspect] vengono evidenziati come nei DevTools.
-export function useLens(heroRef, contentRef, inspectRef) {
+export function useLens(heroRef, contentRef, inspectRef, enabled = true) {
   useEffect(() => {
+    if (!enabled) return
     const hero = heroRef.current
     const content = contentRef.current
     const box = inspectRef.current
@@ -172,5 +173,5 @@ export function useLens(heroRef, contentRef, inspectRef) {
       hero.removeEventListener('pointercancel', onCancel)
       window.removeEventListener('resize', onResize)
     }
-  }, [heroRef, contentRef, inspectRef])
+  }, [heroRef, contentRef, inspectRef, enabled])
 }
