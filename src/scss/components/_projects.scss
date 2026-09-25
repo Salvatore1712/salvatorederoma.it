@@ -21,43 +21,4 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
-
-    &__actions {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 48px;
-    }
-
-    @include respond-above('md') {
-        @include container;
-        padding-block: 64px 96px;
-
-        &__eyebrow {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-        }
-
-        &__title {
-            max-width: 14ch;
-            margin-top: 24px;
-            font-size: clamp(4.5rem, 7vw, 6.5rem);
-            line-height: 1;
-        }
-
-        &__lead {
-            max-width: 60ch;
-            font-size: 1.15rem;
-            color: $gray-text;
-        }
-
-        &__grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            margin-block: 56px;
-        }
-
-        &__actions {
-            margin-bottom: 0;
-        }
-    }
 }

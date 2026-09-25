@@ -1,1 +1,12 @@
 @use '../abstracts' as *;
+
+// Solo tema chiaro: i browser mobile (Chrome Android, Samsung Internet) non invertono i colori
+:root {
+  color-scheme: only light;
+}
+
+body {
+  background-color: $white-primary;
+  color: $black-primary;
+}
+
