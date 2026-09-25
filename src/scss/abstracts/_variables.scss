@@ -1,0 +1,26 @@
+// Font
+$font-main: "Figtree", sans-serif;
+
+$font-size-base: 18px;
+$font-size-base-mobile: 16px;
+
+// Layout
+$container-width: 1126px;
+$header-height: 112px;
+
+// Breakpoint
+$breakpoints: (
+  'sm': 640px,
+  'md': 1024px,
+  'lg': 1280px,
+);
+
+// Colors
+$black-primary: #0A0A0A;
+$blue-secondary: #0A5775;
+$black-secondary: #0B0A09;
+$gray-neutral: grey;
+$Gray-soft: #F3F2F2;
+$gray-text: #5C5C5C;
+$gray-border: #E6E6E6;
+$white-primary: #fff;

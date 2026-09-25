@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// Converte px in rem (base 16px)
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Restituisce il valore di un breakpoint dalla mappa
+@function bp($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Breakpoint "#{$name}" non definito in $breakpoints.';
+  }
+  @return map.get($breakpoints, $name);
+}

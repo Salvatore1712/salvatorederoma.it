@@ -1,0 +1,253 @@
+@use '../abstracts' as *;
+
+// Colori dello strato "codice" sotto la lente
+$code-bg: #081026;
+$code-fg: #56627F;
+$code-tag: #7EA6FF;
+$code-str: #8FE3C0;
+$code-kw: #C4B5FD;
+$code-com: #34405E;
+$code-prop: #9DB4E8;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+.hero {
+    // Valori aggiornati da useLens.js
+    --x: 0px;
+    --y: 0px;
+    --r: 0px;
+    --s: 0;
+    --px: 0px;
+    --py: 0px;
+    --lens: 96px;
+
+    position: relative;
+    display: grid;
+    min-height: calc(100svh - #{$header-height}); // prima schermata meno l'header
+    overflow: hidden;
+    font-family: $font-main;
+    touch-action: pan-y; // su touch il trascinamento orizzontale muove la lente
+
+    @media (hover: hover) {
+        cursor: crosshair;
+    }
+
+    // Strato: la superficie e la copia a raggi X hanno lo stesso identico layout
+    &__layer {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px 40px; // aria sopra e sotto
+    }
+
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    // Pillola come l'etichetta della pagina About (stile .about-tag)
+    &__tag {
+        margin-bottom: 24px;
+    }
+
+    // Stessa scala del titolo della pagina About
+    &__title {
+        font-size: clamp(2.75rem, 11vw, 6.5rem);
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        overflow-wrap: anywhere;
+
+        &--medium {
+            margin-top: 16px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 32px;
+        line-height: 1.3;
+    }
+
+    // container bottoni: spinti verso il fondo della hero
+    &__actions {
+        padding: 0 16px;
+        margin-top: auto;
+        padding-top: 48px; // distanza minima dal testo su schermi bassi
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    // Suggerimento in basso: solo desktop con mouse
+    &__hint {
+        display: none;
+        position: absolute;
+        bottom: 32px;
+        align-items: center;
+        gap: 10px;
+        font-family: $font-mono;
+        font-size: 0.78rem;
+        color: $gray-text;
+    }
+
+    &__hint-dot {
+        flex: none;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $blue-secondary;
+        border-radius: 50%;
+    }
+
+    // ---- Strato a raggi X ----
+
+    &__xray {
+        position: absolute;
+        inset: 0;
+        background-color: $code-bg;
+        pointer-events: none;
+        clip-path: circle(var(--r) at var(--x) var(--y));
+
+        .hero__content {
+            position: relative;
+        }
+
+        .hero__title {
+            color: transparent;
+            -webkit-text-stroke: 1.5px $code-tag;
+        }
+
+        .hero__title--medium,
+        .hero__subtitle {
+            color: #D5DDF0;
+            text-shadow: 0 0 10px $code-bg, 0 0 4px $code-bg;
+        }
+
+        .hero__tag,
+        .button {
+            background: transparent;
+            border: 1px dashed $code-tag;
+            color: $code-tag;
+        }
+    }
+
+    // Codice sorgente che scorre leggermente in parallasse
+    &__source {
+        position: absolute;
+        inset: -40px;
+        overflow: hidden;
+        white-space: pre;
+        font-family: $font-mono;
+        font-size: 12px;
+        line-height: 1.65;
+        color: $code-fg;
+        transform: translate3d(var(--px), var(--py), 0);
+
+        .tk-tag { color: $code-tag; }
+        .tk-str { color: $code-str; }
+        .tk-kw { color: $code-kw; }
+        .tk-com { color: $code-com; }
+        .tk-prop { color: $code-prop; }
+    }
+
+    // Riquadro stile DevTools sull'elemento sotto la lente
+    &__inspect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        background: rgba(111, 168, 220, 0.2);
+        outline: 1px solid rgba(126, 166, 255, 0.9);
+        transition: opacity 0.15s;
+
+        &--on {
+            opacity: 1;
+        }
+    }
+
+    &__inspect-tag {
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 6px);
+        padding: 3px 7px;
+        border-radius: 3px;
+        background: #EEF2FF;
+        font-family: $font-mono;
+        font-size: 11px;
+        white-space: nowrap;
+        color: #475069;
+
+        b {
+            margin-right: 0.7em;
+            color: #1D4ED8;
+        }
+
+        .hero__inspect--below & {
+            top: calc(100% + 6px);
+            bottom: auto;
+        }
+    }
+
+    // Bordo luminoso della lente
+    &__ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(var(--lens) * 2);
+        height: calc(var(--lens) * 2);
+        margin: calc(var(--lens) * -1) 0 0 calc(var(--lens) * -1);
+        border: 1px solid rgba(126, 166, 255, 0.75);
+        border-radius: 50%;
+        box-shadow:
+            0 0 0 6px rgba(37, 99, 235, 0.08),
+            0 24px 60px -24px rgba(37, 99, 235, 0.6);
+        pointer-events: none;
+        transform: translate3d(var(--x), var(--y), 0) scale(var(--s));
+    }
+
+    @include respond-above('md') {
+        --lens: 130px;
+        min-height: calc(100svh - 88px);
+
+        &__layer {
+            justify-content: center;
+            padding: 64px 0;
+        }
+
+        &__content {
+            @include container;
+            flex: none;
+        }
+
+        &__title--medium {
+            font-size: 28px;
+        }
+
+        &__subtitle {
+            max-width: 52ch;
+            font-size: 1.15rem;
+        }
+
+        &__actions {
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 48px;
+            padding: 0;
+        }
+
+        &__hint {
+            left: max(32px, calc((100% - #{$container-width}) / 2 + 32px));
+        }
+    }
+}
+
+@media (hover: hover) and (min-width: 1025px) {
+    .hero__hint {
+        display: flex;
+    }
+}

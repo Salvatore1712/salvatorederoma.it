@@ -1,0 +1,128 @@
+@use '../abstracts' as *;
+
+$menu-transition: 0.5s ease-in-out;
+
+.nav {
+
+    // Pulsante hamburger
+    &__toggle {
+        @include flex-center;
+        position: relative;
+        z-index: 20; // resta sopra il menu aperto
+        flex-direction: column;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background-color: $white-primary;
+        border: 1px solid $Gray-soft;
+        border-radius: 8px;
+
+        &:focus-visible {
+            @include focus-ring($blue-secondary);
+        }
+    }
+
+    &__toggle-line {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background-color: $black-primary;
+        border-radius: 2px;
+        transition: transform $menu-transition;
+    }
+
+    // Da due linee a X
+    &__toggle--open &__toggle-line {
+        &:first-child {
+            transform: translateY(3.5px) rotate(45deg);
+        }
+
+        &:last-child {
+            transform: translateY(-3.5px) rotate(-45deg);
+        }
+    }
+
+    // Menu a comparsa a tutta pagina
+    &__menu {
+        @include flex-center;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background-color: $white-primary;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition:
+            transform $menu-transition,
+            visibility 0s linear 0.5s; // nasconde i link solo a chiusura finita
+
+        &--open {
+            transform: translateX(0);
+            visibility: visible;
+            transition:
+                transform $menu-transition,
+                visibility 0s;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        list-style: none;
+    }
+
+    &__link {
+        font-family: $font-main;
+        font-size: 32px;
+        font-weight: 600;
+        color: $black-primary;
+        transition: color 0.2s;
+
+        &:focus-visible {
+            color: $blue-secondary;
+        }
+
+        // pagina corrente
+        &--active {
+            color: $blue-secondary;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav__menu,
+    .nav__toggle-line {
+        transition: none;
+    }
+}
+
+// Desktop: niente hamburger, link in riga nell'header
+@include respond-above('md') {
+    .nav {
+        &__toggle {
+            display: none;
+        }
+
+        &__menu {
+            position: static;
+            transform: none;
+            visibility: visible;
+            background: none;
+            transition: none;
+        }
+
+        &__list {
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        &__link {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    }
+}

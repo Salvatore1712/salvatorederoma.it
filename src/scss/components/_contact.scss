@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.contact {
+    background-color: grey;
+    padding: 16px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $white-primary;
+
+    &__title {
+        font-size: clamp(3.9rem, 12dvw, 4rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2rem;
+    }
+
+    &__box {
+        margin: 0 auto;
+    }
+
+    // Desktop: sfondo a tutta larghezza, contenuto allineato al container
+    @include respond-above('md') {
+        margin-block: 96px;
+        padding-block: 96px;
+        padding-inline: max(32px, calc((100% - #{$container-width}) / 2 + 32px));
+
+        &__title {
+            max-width: 18ch;
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+
+        &__subtitle {
+            max-width: 55ch;
+            font-size: 1.15rem;
+        }
+
+        &__box {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.header {
+    height: $header-height;
+    padding: 0 16px;
+    display: flex;
+    background-color: $white-primary;
+    flex-direction: row;
+    color: $black-primary;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__logo {
+
+        &__icon {
+            height: 48px;
+            width: auto;
+        }
+    }
+
+    // Desktop: header fisso in alto, contenuto centrato
+    @include respond-above('md') {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        height: 88px;
+        padding: 0;
+        border-bottom: 1px solid $gray-border;
+        background-color: rgba($white-primary, 0.9);
+        backdrop-filter: blur(8px);
+
+        &__inner {
+            @include container;
+        }
+
+        &__logo__icon {
+            height: 40px;
+        }
+    }
+}

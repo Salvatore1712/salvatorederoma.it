@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.footer {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-family: $font-main;
+    display: flex;
+    background-color: $gray-neutral;
+    color: $white-primary;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__line {
+        width: 100%;
+        border: 0.5px solid $white-primary;
+    }
+
+    // Desktop: copyright a sinistra, social a destra
+    @include respond-above('md') {
+        padding: 32px 0;
+
+        &__inner {
+            @include container;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__line {
+            display: none;
+        }
+    }
+}

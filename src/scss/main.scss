@@ -1,0 +1,9 @@
+// Architettura 7-1
+// abstracts non genera CSS: ogni partial lo importa con `@use '../abstracts' as *;`
+
+@use 'vendors';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';
+@use 'themes';
