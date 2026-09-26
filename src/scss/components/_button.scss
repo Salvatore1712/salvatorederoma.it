@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 285px;
+    max-width: 100%; // su schermi stretti non esce dal contenitore
     padding: 10px 16px;
     background-color: $black-primary;
     color: $white-primary;

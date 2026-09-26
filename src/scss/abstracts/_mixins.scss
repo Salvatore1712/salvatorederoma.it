@@ -33,3 +33,10 @@
   margin-inline: auto;
   padding-inline: 32px;
 }
+
+// Card bianca con bordo e angoli arrotondati (stile delle card della pagina About)
+@mixin card-surface {
+  border: 1px solid $gray-border;
+  border-radius: 16px;
+  background-color: $white-primary;
+}

@@ -1,32 +1,35 @@
 @use '../abstracts' as *;
 
+// Card con numero in etichetta, titolo e testo (stile dei pillar della pagina About)
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include card-surface;
+    padding: 24px;
 
     &__body {
         display: flex;
         flex-direction: column;
-        padding: 16px;
-        border-radius: 8px;
-        gap: 8px;
+        gap: 12px;
+    }
+
+    &__number {
+        width: fit-content;
+        padding: 4px 10px;
+        border: 1px solid $gray-border;
+        border-radius: 6px;
+        background-color: $Gray-soft;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
     }
 
     &__title {
-        font-size: 1.5rem;
+        margin-top: 4px;
+        font-size: 1.4rem;
         font-weight: 600;
     }
 
     &__text {
-        color: $gray-neutral;
-    }
-
-    &__number {
-        font-weight: bold;
-        font-size: 3rem;
-        margin: 0;
-        padding: 0;
-        color: $blue-secondary;
+        line-height: 1.6;
+        color: $gray-text;
     }
 }

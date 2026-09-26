@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+// Contenitore comune delle pagine: larghezza massima, spazi e linee tra le sezioni
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    max-width: $container-width;
+    margin-inline: auto;
+    padding: 24px 16px 64px;
+    font-family: $font-main;
+
+    @include respond-above('md') {
+        gap: 96px;
+        padding: 64px 32px 96px;
+    }
+
+    // Linea divisoria tra le sezioni (non sopra il riquadro nero finale)
+    > section + section:not(.cta) {
+        padding-top: 48px;
+        border-top: 1px solid $gray-border;
+    }
+}

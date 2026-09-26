@@ -1,5 +1,5 @@
 export const navigation = [
-  { label: 'home', to: '/' },
-  { label: 'project', to: '/project' },
-  { label: 'about me', to: '/about' },
+  { label: 'HOME', to: '/' },
+  { label: 'PROJECT', to: '/project' },
+  { label: 'ABOUT ME', to: '/about' },
 ]

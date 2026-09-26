@@ -1,140 +1,32 @@
 @use '../abstracts' as *;
 
+// Capability: usa .stats e .tag-list (vedi _shared.scss)
 .services {
-    display: flex;
-    flex-direction: column;
-    margin: 24px 16px;
-
-
-    &__title {
-        font-weight: 600;
-        font-size: 22px;
+    .stats {
+        margin-top: 16px;
     }
 
-    // Capability solo tipografica: numero in apice, parola forte + parola leggera
-    &__capability {
-        counter-increment: capability;
-        font-size: clamp(1.25rem, 5.5vw, 2.25rem);
-        line-height: 1.05;
-
-        &::before {
-            content: counter(capability, decimal-leading-zero);
-            display: block;
-            margin-bottom: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            color: $blue-secondary;
-        }
+    // Parole lunghe (SEARCH ENGINE) nelle card a due colonne
+    &__value {
+        font-size: clamp(1.25rem, 5vw, 1.75rem);
+        overflow-wrap: anywhere;
     }
 
-    &__capability-title {
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: $black-primary;
-    }
-
-    &__capability-accent {
-        display: block;
-        font-weight: 300;
-        font-style: italic;
-        color: $gray-neutral;
+    &__stack-heading {
+        margin-top: 40px;
     }
 }
 
-.capabilities {
-    counter-reset: capability;
-    margin-top: 24px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); // 2 colonne identiche
-    gap: 32px 16px;
-    text-align: left;
-}
-
-// Tech stack: etichette rettangolari
-.stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    list-style: none;
-
-    &__item {
-        padding: 8px 14px;
-        border: 1.5px solid $black-primary;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: $black-primary;
-        transition:
-            background-color 0.2s,
-            color 0.2s;
-
-        &:hover {
-            background-color: $black-primary;
-            color: $white-primary;
-        }
-    }
-}
-
+// Metodo: titolo di sezione e tre card
 .focus {
-    // border: 1px solid salmon;
-
-    &__title {
-        font-size: clamp(3.9rem, 12dvw, 4rem);
-        font-weight: 700;
-        margin-bottom: 3rem;
-        margin-top: 3rem;
-    }
-}
-
-@include respond-above('md') {
-    .services {
-        @include container;
-        margin-block: 96px;
-
-        &__capability {
-            font-size: 2.25rem;
-        }
-    }
-
-    .capabilities {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 32px;
-    }
-
-    .stack {
-        margin-block: 64px;
-    }
-
-    // Titolo su tutta la riga, le tre card affiancate
-    .focus {
+    &__grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 32px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 32px;
 
-        &__title {
-            grid-column: 1 / -1;
-            max-width: 16ch;
-            margin-block: 0 24px;
-            font-size: 4.5rem;
-            line-height: 1;
-        }
-
-        .card {
-            align-items: stretch;
-            border-top: 1px solid $black-primary;
-
-            &__body {
-                padding: 24px 0 0;
-            }
-
-            &__text {
-                line-height: 1.6;
-            }
+        @include respond-above('md') {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 }

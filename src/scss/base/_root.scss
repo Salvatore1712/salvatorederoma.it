@@ -10,3 +10,10 @@ body {
   color: $black-primary;
 }
 
+// #root è isolato (vedi _reset.scss): gli serve uno sfondo proprio perché il cursore
+// con mix-blend-mode "difference" (CursorTrail) si veda anche sulle zone bianche
+#root {
+  min-height: 100svh;
+  background-color: $white-primary;
+}
+

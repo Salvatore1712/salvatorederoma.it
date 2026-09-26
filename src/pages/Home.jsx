@@ -4,7 +4,7 @@ import Contact from '../components/sections/Contact.jsx'
 
 function Home() {
   return (
-    <main className="home">
+    <main className="page home">
       <title>Salvatore De Roma — Web Developer</title>
       <meta name="description" content="Salvatore De Roma, web developer: websites designed to attract clients and strengthen your brand." />
       <Hero />

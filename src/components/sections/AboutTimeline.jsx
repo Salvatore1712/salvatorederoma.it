@@ -3,9 +3,9 @@ import { timeline } from '../../data/about.js'
 function AboutTimeline() {
   return (
     <section className="about-timeline">
-      <p className="about-eyebrow" data-reveal>Career arc</p>
-      <h2 className="about-section-title" data-reveal style={{ '--i': 1 }}>Trajectory & Impact</h2>
-      <p className="about-section-lead" data-reveal style={{ '--i': 2 }}>Chronological evolution through design bureaus and digital engineering laboratories.</p>
+      <p className="eyebrow" data-reveal>Career arc</p>
+      <h2 className="section-title" data-reveal style={{ '--i': 1 }}>Trajectory & Impact</h2>
+      <p className="section-lead" data-reveal style={{ '--i': 2 }}>Chronological evolution through design bureaus and digital engineering laboratories.</p>
 
       <ol className="about-timeline__list">
         {timeline.map((item) => (

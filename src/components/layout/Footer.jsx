@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <p className="footer__copy">© {year} Salvatore De Roma</p>
+        <p className="footer__copy">© {year} Salvatore De Roma - WEB DEVELOPER</p>
         <hr className='footer__line'/>
         <SocialLinks />
       </div>

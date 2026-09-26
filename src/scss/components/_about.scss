@@ -1,162 +1,12 @@
 @use '../abstracts' as *;
 
-// ---- Elementi condivisi della pagina About ----
-
-.about-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: fit-content;
-    padding: 6px 14px;
-    border: 1px solid $gray-border;
-    border-radius: 999px;
-    background-color: $white-primary;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $gray-text;
-
-    &--strong {
-        color: $black-primary;
-    }
-
-    // Tag tecnologia: niente maiuscolo, testo scuro
-    &--light {
-        text-transform: none;
-        letter-spacing: 0.04em;
-        color: $black-primary;
-    }
-}
-
-.about-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: $blue-secondary;
-}
-
-.about-section-title {
-    margin-top: 12px;
-    font-size: clamp(2rem, 7vw, 3.25rem);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-}
-
-.about-section-lead {
-    margin-top: 12px;
-    max-width: 60ch;
-    color: $gray-text;
-}
-
-// Card bianca con bordo, usata da stats, profilo e pillar
-%about-card {
-    border: 1px solid $gray-border;
-    border-radius: 16px;
-    background-color: $white-primary;
-}
-
-// ---- Hero ----
-
-.about-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-
-    &__title {
-        font-size: clamp(2.75rem, 11vw, 6.5rem);
-        font-weight: 800;
-        line-height: 0.95;
-        letter-spacing: -0.03em;
-        text-transform: uppercase;
-        overflow-wrap: anywhere;
-    }
-
-    &__lead {
-        max-width: 55ch;
-        font-size: 1.15rem;
-        line-height: 1.6;
-        color: $gray-text;
-    }
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    width: 100%;
-    margin-top: 16px;
-
-    @include respond-above('md') {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    &__item {
-        @extend %about-card;
-        padding: 16px;
-    }
-
-    &__head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-    }
-
-    &__label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: $gray-text;
-    }
-
-    &__icon {
-        flex-shrink: 0;
-        color: $gray-text;
-
-        &--accent {
-            color: $blue-secondary;
-        }
-    }
-
-    &__value {
-        margin-top: 12px;
-        font-size: clamp(2rem, 8vw, 2.75rem);
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: -0.02em;
-    }
-
-    &__text {
-        margin-top: 8px;
-        font-size: 0.9rem;
-        color: $gray-text;
-    }
-}
+// Stili specifici della pagina About (gli elementi comuni sono in _shared.scss)
 
 // ---- Profilo ----
 
 .about-profile {
-    &__heading {
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-    }
-
-    &__tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
-    }
-
     &__card {
-        @extend %about-card;
+        @include card-surface;
         overflow: hidden;
         margin-top: 24px;
 
@@ -326,7 +176,7 @@
     }
 
     &__card {
-        @extend %about-card;
+        @include card-surface;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -444,88 +294,5 @@
         max-width: 65ch;
         line-height: 1.6;
         color: $gray-text;
-    }
-}
-
-// ---- CTA ----
-
-.about-cta {
-    padding: 32px 24px;
-    border-radius: 20px;
-    background-color: $black-primary;
-    color: $white-primary;
-    box-shadow: 0 20px 40px rgba($black-primary, 0.15);
-
-    @include respond-above('md') {
-        padding: 56px;
-    }
-
-    &__top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-    }
-
-    &__status {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background-color: rgba($white-primary, 0.1);
-
-        &::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #38BDF8;
-        }
-    }
-
-    &__slots {
-        color: $gray-neutral;
-    }
-
-    &__title {
-        margin-top: 32px;
-        font-size: clamp(2rem, 8vw, 4rem);
-        font-weight: 800;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-    }
-
-    &__text {
-        margin-top: 20px;
-        max-width: 50ch;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: $gray-neutral;
-    }
-
-    &__actions {
-        margin-top: 32px;
-    }
-
-    &__footer {
-        margin-top: 32px;
-        padding-top: 20px;
-        border-top: 1px solid rgba($white-primary, 0.12);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: $gray-neutral;
-
-        strong {
-            color: $white-primary;
-        }
     }
 }

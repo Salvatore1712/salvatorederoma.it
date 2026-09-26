@@ -5,7 +5,7 @@ import AboutCta from '../components/sections/AboutCta.jsx'
 
 function About() {
   return (
-    <main className="about-page">
+    <main className="page about-page">
       <title>About — Salvatore De Roma</title>
       <meta name="description" content="About Salvatore De Roma, web developer." />
       <AboutHero />

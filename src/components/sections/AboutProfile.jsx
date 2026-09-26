@@ -5,10 +5,10 @@ import { philosophyTags, education } from '../../data/about.js'
 function AboutProfile({ image }) {
   return (
     <section className="about-profile">
-      <h2 className="about-profile__heading" data-reveal>The philosophy & pedigree</h2>
-      <ul className="about-profile__tags" role="list" data-reveal style={{ '--i': 1 }}>
+      <h2 className="section-heading" data-reveal>The philosophy & pedigree</h2>
+      <ul className="tag-list" role="list" data-reveal style={{ '--i': 1 }}>
         {philosophyTags.map((tag) => (
-          <li key={tag} className="about-tag">{tag}</li>
+          <li key={tag} className="tag">{tag}</li>
         ))}
       </ul>
 
@@ -43,7 +43,7 @@ function AboutProfile({ image }) {
                   <p className="about-profile__education-title">{item.title}</p>
                   <p className="about-profile__education-school">{item.school}</p>
                 </div>
-                <span className="about-tag">{item.status}</span>
+                <span className="tag">{item.status}</span>
               </li>
             ))}
           </ul>

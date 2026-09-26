@@ -1,24 +1,20 @@
 @use '../abstracts' as *;
 
+// Apertura con .page-intro (vedi _shared.scss), poi la griglia delle card
 .projects {
-    font-family: $font-main;
-    padding: 0 16px;
-
-    &__title {
-        margin-top: 16px;
-        margin-bottom: 28px;
-        font-size: clamp(3.6rem, 12vw, 7rem);
-        font-weight: 700;
-    }
-
     &__grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 24px;
-        margin-block: 32px;
+        gap: 16px;
+        margin-top: 48px;
 
         @include respond-above('sm') {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include respond-above('md') {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 64px;
         }
     }
 }
