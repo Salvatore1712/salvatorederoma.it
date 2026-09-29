@@ -6,9 +6,9 @@ function Projects() {
     <section className="projects" id="projects">
       {/* Apertura come la pagina About: etichetta, titolo grande, testo */}
       <div className="page-intro">
-        <p className="tag" data-reveal>• Archive & case studies • 2023 — 2026</p>
-        <h1 className="page-title" data-reveal style={{ '--i': 1 }}>Selected works & digital architecture</h1>
-        <p className="page-lead" data-reveal style={{ '--i': 2 }}>A curated register of high-performance web systems, headless e-commerce, and architectural interfaces built for design-led brands worldwide.</p>
+        <p className="tag" data-reveal>• Archivio e casi studio • 2023 — 2026</p>
+        <h1 className="page-title" data-reveal style={{ '--i': 1 }}>Lavori selezionati e architettura digitale</h1>
+        <p className="page-lead" data-reveal style={{ '--i': 2 }}>Una selezione curata di sistemi web ad alte prestazioni, e-commerce headless e interfacce dal forte impianto architettonico, realizzati per brand attenti al design in tutto il mondo.</p>
       </div>
       <div className="projects__grid">
         {projects.map(({ id, ...project }, index) => (

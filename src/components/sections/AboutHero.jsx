@@ -4,14 +4,14 @@ import { stats } from '../../data/about.js'
 function AboutHero() {
   return (
     <section className="page-intro">
-      <p className="tag" data-reveal>• Architectural roots & digital rigor • Est. Italy / Global clients</p>
-      <h1 className="page-title" data-reveal style={{ '--i': 1 }}>Engineering purposeful digital architecture</h1>
+      <p className="tag" data-reveal>• Web developer & design essenziale • Base in Italia / Clienti in tutto il mondo</p>
+      <h1 className="page-title" data-reveal style={{ '--i': 1 }}>Design pulito, codice solido, risultati concreti</h1>
       <p className="page-lead" data-reveal style={{ '--i': 2 }}>
-        Bridging the gap between timeless architectural thinking, clean typographic hierarchy,
-        and sub-second web performance. Creating digital systems that command authority and
-        scale effortlessly.
+        Progetto e sviluppo siti web in cui è la semplicità a fare la differenza: gerarchia
+        tipografica chiara, interfacce intuitive e codice veloce e accessibile. Spazi digitali che
+        aiutano i brand a comunicare con chiarezza e a trasformare i visitatori in clienti.
       </p>
-      <p className="tag tag--strong" data-reveal style={{ '--i': 3 }}>Headless • High performance</p>
+      <p className="tag tag--strong" data-reveal style={{ '--i': 3 }}>Headless • Alte prestazioni</p>
 
       <ul className="stats" role="list">
         {stats.map((stat, index) => (

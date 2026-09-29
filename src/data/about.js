@@ -1,35 +1,35 @@
 // Contenuti della pagina About
 
 export const stats = [
-  { id: 'experience', label: 'Experience', value: '03+', text: 'Years of Structural & Web Discipline', icon: 'ruler' },
-  { id: 'target', label: 'Target', value: '< 50ms', text: 'Average Global Edge Latency', icon: 'gauge', accent: true },
-  { id: 'hygiene', label: 'Hygiene', value: '100%', text: 'Strict TypeScript Code Integrity', icon: 'badge' },
-  { id: 'scale', label: 'Scale', value: '25+', text: 'Enterprise Deployments Active', icon: 'rocket' },
+  { id: 'experience', label: 'Esperienza', value: '03+', text: 'Anni di progettazione e sviluppo web', icon: 'ruler' },
+  { id: 'target', label: 'Obiettivo', value: '< 50ms', text: 'Latenza media globale sull’edge', icon: 'gauge', accent: true },
+  { id: 'hygiene', label: 'Qualità', value: '100%', text: 'Codice TypeScript rigoroso e affidabile', icon: 'badge' },
+  { id: 'scale', label: 'Portata', value: '25+', text: 'Progetti enterprise in produzione', icon: 'rocket' },
 ]
 
 export const philosophyTags = [
-  'Based in Italy, collaborating worldwide',
-  'Radar: Next.js 15 • Rust/Wasm',
-  'Discipline: WebGL • Swiss Typography',
+  'Base in Italia, collaborazioni in tutto il mondo',
+  'In esplorazione: Next.js 15 • Rust/Wasm',
+  'Discipline: WebGL • Tipografia svizzera',
 ]
 
 export const education = [
-  { id: 'degree', title: 'Bachelor’s Degree', school: 'Università Telematica Pegaso', status: 'In progress' },
-  { id: 'master', title: 'Master in Web Development', school: 'start2impact University', status: 'In progress' },
+  { id: 'degree', title: 'Laurea triennale', school: 'Università Telematica Pegaso', status: 'In corso' },
+  { id: 'master', title: 'Master in Sviluppo Web', school: 'start2impact University', status: 'In corso' },
 ]
 
 export const pillars = [
   {
     id: 'frontend',
-    title: 'Frontend Architecture',
-    text: 'State-driven reactive layouts, component micro-systems, and deterministic state trees built with zero unnecessary re-renders.',
+    title: 'Architettura frontend',
+    text: 'Layout reattivi guidati dallo stato, micro-sistemi di componenti e alberi di stato deterministici, senza alcun re-render superfluo.',
     tags: ['React', 'Next.js 15', 'TypeScript', 'Tailwind CSS', 'XState'],
     icon: 'layers',
   },
   {
     id: 'creative',
-    title: 'Creative UI/UX',
-    text: 'Intuitive interfaces and user flows built around real needs: clear visual hierarchy, consistent design systems, and micro-interactions that guide every action.',
+    title: 'UI/UX creativa',
+    text: 'Interfacce intuitive e flussi utente costruiti attorno a bisogni reali: gerarchia visiva chiara, design system coerenti e micro-interazioni che guidano ogni azione.',
     tags: ['Three.js', 'WebGL', 'GLSL Shaders', 'Framer Motion', 'Canvas API'],
     icon: 'cube',
   },
@@ -38,11 +38,11 @@ export const pillars = [
 export const timeline = [
   {
     id: 'independent',
-    period: '2023 — Present',
+    period: '2023 — Oggi',
     place: 'Asia / Remote',
-    role: 'Independent Web Developer',
-    company: 'Flagship Independent Practice',
-    text: 'Designing and building custom websites for small businesses and professionals: from wireframes and visual design to responsive, SEO-ready development.',
+    role: 'Web Developer indipendente',
+    company: 'Attività in proprio',
+    text: 'Progetto e realizzo siti web su misura per piccole imprese e professionisti: dai wireframe al visual design, fino a uno sviluppo responsive e ottimizzato per la SEO.',
     current: true,
   },
   {
@@ -50,15 +50,15 @@ export const timeline = [
     period: '2021 — 2023',
     place: 'Asia / Remote',
     role: 'Junior Frontend Engineer',
-    company: 'Enterprise Scale Agency / Tech Lab',
-    text: 'Turned web design mockups into responsive, accessible interfaces, working on layouts, reusable components, and consistent visual styles across pages.',
+    company: 'Agenzia enterprise / Tech Lab',
+    text: 'Ho trasformato mockup di web design in interfacce responsive e accessibili, lavorando su layout, componenti riutilizzabili e stili visivi coerenti tra le pagine.',
   },
   {
     id: 'creative',
     period: '2018 — 2021',
-    place: 'Italy',
+    place: 'Italia',
     role: 'Creative Developer & UI Specialist',
     company: 'Interaction Lab, Practice Creative Studio',
-    text: 'Explored web design fundamentals through personal projects: typography, color, layout grids, and user-centered interfaces for landing pages and portfolios.',
+    text: 'Ho approfondito i fondamenti del web design attraverso progetti personali: tipografia, colore, griglie di impaginazione e interfacce centrate sull’utente per landing page e portfolio.',
   },
 ]

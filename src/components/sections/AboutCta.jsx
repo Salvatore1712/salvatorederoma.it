@@ -4,22 +4,22 @@ function AboutCta() {
   return (
     <section className="cta" data-reveal>
       <div className="cta__top">
-        <span className="cta__status">Booking Q2 / Q3 2025</span>
-        <span className="cta__slots">Limited slots</span>
+        <span className="cta__status">Disponibilità Q2 / Q3 2025</span>
+        <span className="cta__slots">Posti limitati</span>
       </div>
 
-      <h2 className="cta__title">Have a project in mind? Let’s build something exceptional together.</h2>
+      <h2 className="cta__title">Hai un progetto in mente? Realizziamo insieme qualcosa di eccezionale.</h2>
       <p className="cta__text">
-        Currently accepting select contracts for frontend architecture, headless re-platforming,
-        and performance advisory.
+        Al momento accetto un numero selezionato di incarichi di architettura frontend, migrazione
+        a piattaforme headless e consulenza sulle prestazioni.
       </p>
 
       <div className="cta__actions">
-        <Button href="mailto:info@salvatorederoma.it" variant="secondary">CONTACT ME</Button>
+        <Button href="mailto:info@salvatorederoma.it" variant="secondary">CONTATTAMI</Button>
       </div>
 
       <p className="cta__footer">
-        First response target <strong>&lt; 24 business hours</strong>
+        Prima risposta entro <strong>24 ore lavorative</strong>
       </p>
     </section>
   )

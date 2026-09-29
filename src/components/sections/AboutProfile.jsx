@@ -5,7 +5,7 @@ import { philosophyTags, education } from '../../data/about.js'
 function AboutProfile({ image }) {
   return (
     <section className="about-profile">
-      <h2 className="section-heading" data-reveal>The philosophy & pedigree</h2>
+      <h2 className="section-heading" data-reveal>Filosofia e formazione</h2>
       <ul className="tag-list" role="list" data-reveal style={{ '--i': 1 }}>
         {philosophyTags.map((tag) => (
           <li key={tag} className="tag">{tag}</li>
@@ -29,11 +29,11 @@ function AboutProfile({ image }) {
         </div>
 
         <div className="about-profile__body">
-          <h3 className="about-profile__title">Constructing digital products with structural honesty.</h3>
+          <h3 className="about-profile__title">Costruire prodotti digitali con onestà strutturale.</h3>
           <p className="about-profile__text">
-            I’m a web developer based in Italy, passionate about turning ideas into fast,
-            accessible, and well-designed websites. I build with HTML, CSS/Sass, JavaScript and
-            React, focusing on clean code and interfaces that help brands communicate clearly.
+            Sono un web developer con base in Italia, appassionato di trasformare le idee in siti
+            web veloci, accessibili e ben progettati. Lavoro con HTML, CSS/Sass, JavaScript e React,
+            puntando su codice pulito e interfacce che aiutano i brand a comunicare con chiarezza.
           </p>
 
           <ul className="about-profile__education" role="list">
@@ -50,18 +50,18 @@ function AboutProfile({ image }) {
 
           <blockquote className="about-profile__quote">
             <p>
-              “A website is not merely a promotional facade — it is a foundational positioning
-              asset and an engineering instrument.”
+              “Un sito web non è una semplice vetrina promozionale: è una risorsa fondamentale
+              di posizionamento e uno strumento di ingegneria.”
             </p>
             <footer className="about-profile__quote-footer">
               <span>— Salvatore De Roma</span>
-              <span>Ref: ARCH-0924</span>
+              <span>Rif: ARCH-0924</span>
             </footer>
           </blockquote>
 
           <p className="about-profile__note">
             <Icon name="shield" size={18} className="about-profile__note-icon" />
-            S. De Roma — Milan / Naples • CET — Practice Accredited 2025
+            S. De Roma — Milano / Napoli • CET — Attività accreditata nel 2025
           </p>
         </div>
       </article>

@@ -6,10 +6,10 @@ export const services = [
 
 // title in grassetto, accent in corsivo leggero
 export const capabilities = [
-  { id: 1, title: 'SEARCH ENGINE', accent: 'visibility' },
-  { id: 2, title: 'HIGH', accent: 'performance' },
-  { id: 3, title: 'RESPONSIVE', accent: 'design' },
-  { id: 4, title: 'ACCESSIBLE', accent: 'for everyone' },
+  { id: 1, title: 'VISIBILITÀ', accent: 'sui motori di ricerca' },
+  { id: 2, title: 'PRESTAZIONI', accent: 'elevate' },
+  { id: 3, title: 'DESIGN', accent: 'responsive' },
+  { id: 4, title: 'ACCESSIBILE', accent: 'a tutti' },
 ]
 
 export const stack = ['HTML', 'CSS / SCSS', 'JavaScript', 'React', 'Next.js', 'Vite', 'Git', 'Figma']

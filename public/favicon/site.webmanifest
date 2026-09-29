@@ -1,9 +1,9 @@
 {
   "name": "Salvatore De Roma — Web Developer",
   "short_name": "S. De Roma",
-  "description": "Websites designed to attract clients and strengthen your brand.",
+  "description": "Siti web progettati per attrarre clienti e rafforzare il tuo brand.",
   "start_url": "/",
-  "lang": "en",
+  "lang": "it",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",

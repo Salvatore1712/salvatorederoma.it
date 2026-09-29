@@ -6,8 +6,8 @@ import AboutCta from '../components/sections/AboutCta.jsx'
 function About() {
   return (
     <main className="page about-page">
-      <title>About — Salvatore De Roma</title>
-      <meta name="description" content="About Salvatore De Roma, web developer." />
+      <title>Chi sono — Salvatore De Roma</title>
+      <meta name="description" content="Chi è Salvatore De Roma, web developer: percorso, formazione e metodo di lavoro." />
       <AboutHero />
       <AboutProfile image="/salvatore_deroma.png"/>
       <AboutTimeline />

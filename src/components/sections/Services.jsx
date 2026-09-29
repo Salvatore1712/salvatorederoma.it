@@ -6,7 +6,7 @@ function Services() {
     <>
       {/* Capability e tecnologie: card numeriche e tag come nella pagina About */}
       <section className="services" id="services">
-        <h2 className="section-heading" data-reveal>Core capabilities</h2>
+        <h2 className="section-heading" data-reveal>Competenze chiave</h2>
         <ul className="stats" role="list">
           {capabilities.map((cap, index) => (
             <li key={cap.id} className="stats__item" data-reveal style={{ '--i': index % 2 }}>
@@ -19,7 +19,7 @@ function Services() {
           ))}
         </ul>
 
-        <h3 className="section-heading services__stack-heading" data-reveal>Tech stack</h3>
+        <h3 className="section-heading services__stack-heading" data-reveal>Stack tecnologico</h3>
         <ul className="tag-list" role="list" data-reveal>
           {stack.map((item) => (
             <li key={item} className="tag tag--light">{item}</li>
@@ -29,12 +29,12 @@ function Services() {
 
       {/* Metodo: tre card come i pillar della pagina About */}
       <section className="focus">
-        <p className="eyebrow" data-reveal>Approach</p>
-        <h2 className="section-title" data-reveal style={{ '--i': 1 }}>Strategic approach to digital growth</h2>
+        <p className="eyebrow" data-reveal>Metodo</p>
+        <h2 className="section-title" data-reveal style={{ '--i': 1 }}>Un approccio strategico alla crescita digitale</h2>
         <div className="focus__grid">
-          <Card title={"Objective Analysis"} text={"In-depth assessment of target audiences, industry benchmarks, and commercial goals. Clarifying the core value prosition before typing a single character of markup."} number={"01"} data-reveal></Card>
-          <Card title={"Targeted Design"} text={"Crafting intuitive hierarchy, purposeful spacing, and contemporary aesthetics that command immediate respect and guide user action seamlessly."} number={"02"} data-reveal style={{ '--i': 1 }}></Card>
-          <Card title={"Precise Development"} text={"Clean semantic markup, optimized asset pipelines, rigorous responsiveness, and robust SEO infrastructure engineered for long-term scalability."} number={"03"} data-reveal style={{ '--i': 2 }}></Card>
+          <Card title={"Analisi degli obiettivi"} text={"Studio approfondito del pubblico di riferimento, dei benchmark di settore e degli obiettivi commerciali, per definire la proposta di valore prima ancora di scrivere una riga di codice."} number={"01"} data-reveal></Card>
+          <Card title={"Design mirato"} text={"Gerarchie intuitive, spaziature studiate e un’estetica contemporanea che trasmettono autorevolezza al primo sguardo e guidano le azioni dell’utente in modo naturale."} number={"02"} data-reveal style={{ '--i': 1 }}></Card>
+          <Card title={"Sviluppo accurato"} text={"Markup semantico pulito, asset ottimizzati, responsive curato in ogni dettaglio e solide basi SEO, pensati per crescere nel tempo."} number={"03"} data-reveal style={{ '--i': 2 }}></Card>
         </div>
       </section>
     </>
